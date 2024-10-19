@@ -1,0 +1,29 @@
+#	D I G I T I Z E R 
+/gate/digitizerMgr/name SinglesRY
+/gate/digitizerMgr/chooseSD LSO
+/gate/digitizerMgr/insert SinglesDigitizer
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/setInputCollection Singles
+
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/insert adder
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/insert readout
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/readout/setDepth 1
+
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/insert energyResolution
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/energyResolution/fwhm 0.26
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/energyResolution/energyOfReference 511. keV
+
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/insert energyFraming
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/energyFraming/setMin 350. keV
+/gate/digitizerMgr/LSO/SinglesDigitizer/SinglesRY/energyFraming/setMax 650. keV
+
+
+#	C O I N C I    S O R T E R 
+#/gate/digitizerMgr/CoincidenceSorter/Coincidences/setWindow 120. ns
+#/gate/digitizerMgr/Coincidences/MultiplesPolicy  takeWinnerOfGoods
+
+#/gate/digitizerMgr/name delayedCoincidences
+# /gate/digitizerMgr/insert coincidenceSorter
+#/gate/digitizerMgr/CoincidenceSorter/delayedCoincidences/setOffset 500. ns
+#/gate/digitizerMgr/CoincidenceSorter/delayedCoincidences/setWindow 120. ns
+#/gate/digitizerMgr/delay/MultiplesPolicy  takeWinnerOfGoods
+
